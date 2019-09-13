@@ -1,17 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:messio/config/Palette.dart';
-import 'package:messio/pages/ConversationBottomSheet.dart';
 
 class InputWidget extends StatelessWidget {
-  final TextEditingController textEditingController = TextEditingController();
 
-  InputWidget();
+  final TextEditingController textEditingController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      elevation: 60.0,
-        child: Container(
+    return Container(
       child: Row(
         children: <Widget>[
           Material(
@@ -19,20 +15,7 @@ class InputWidget extends StatelessWidget {
               margin: new EdgeInsets.symmetric(horizontal: 1.0),
               child: new IconButton(
                 icon: new Icon(Icons.face),
-                color: Palette.accentColor,
-                onPressed: () => {
-                  showModalBottomSheet(
-                      context: context,
-                      builder: (BuildContext bc) {
-                        return Container(
-                          child: new Wrap(
-                            children: <Widget>[
-                              ConversationBottomSheet()
-                            ],
-                          ),
-                        );
-                      })
-                },
+                color: Palette.primaryColor,
               ),
             ),
             color: Colors.white,
@@ -40,18 +23,16 @@ class InputWidget extends StatelessWidget {
 
           // Text input
           Flexible(
-            child: Material(
-                child: Container(
+            child: Container(
               child: TextField(
-                style:
-                    TextStyle(color: Palette.primaryTextColor, fontSize: 15.0),
+                style: TextStyle(color: Palette.primaryTextColor, fontSize: 15.0),
                 controller: textEditingController,
                 decoration: InputDecoration.collapsed(
                   hintText: 'Type a message',
                   hintStyle: TextStyle(color: Palette.greyColor),
                 ),
               ),
-            )),
+            ),
           ),
 
           // Send Message Button
@@ -61,7 +42,7 @@ class InputWidget extends StatelessWidget {
               child: new IconButton(
                 icon: new Icon(Icons.send),
                 onPressed: () => {},
-                color: Palette.accentColor,
+                color: Palette.primaryColor,
               ),
             ),
             color: Colors.white,
@@ -74,6 +55,6 @@ class InputWidget extends StatelessWidget {
           border: new Border(
               top: new BorderSide(color: Palette.greyColor, width: 0.5)),
           color: Colors.white),
-    ));
+    );
   }
 }
