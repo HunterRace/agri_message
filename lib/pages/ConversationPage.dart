@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:messio/widgets/ChatAppBar.dart';
-import 'package:messio/widgets/ChatListWidget.dart';
-import 'package:messio/widgets/InputWidget.dart';
+import 'package:agri_message/widgets/ChatAppBar.dart';
+import 'package:agri_message/widgets/ChatListWidget.dart';
+import 'package:agri_message/widgets/InputWidget.dart';
 
 class ConversationPage extends StatefulWidget {
   @override
